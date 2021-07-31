@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+ <section class="front-section" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.582),rgba(0, 0, 0, 0.568)), url(/images/products/{{ header.background }});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+       
+    
+        <p class="title-page bold">CALENDRIER</p>
+    </section>
+
+    <section class="event-section">
+        <div class="carte-content">
+
+            {% for event in events %}
+                <div class="carte-item">
+                    <img src="/images/products/{{event.picture}}" alt="">
+                    <div class="carte-item-content">
+                        <div class="carte-item-header bold">
+                            <div class="carte-item-title subtitle">{{event.name}}</div>
+                            <div class="carte-item-price">{{event.date}}</div>
+                        </div>
+                        <div class="carte-item-desc dark-grey">{{event.description|raw}}</div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            
+        </div>
+
+    </section>
+{% endblock %}

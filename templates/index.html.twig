@@ -1,0 +1,71 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<section class="front-section" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.582),rgba(0, 0, 0, 0.568)), url(/images/products/{{ header.background }});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+
+        <p class="manuscrit">{{ header.tag }}</p>
+    
+        <h1 class="slogan">{{ header.title|raw }}</h1>
+    </section>
+
+    <section class="about-section">
+        <div class="about-img-block">
+            <img src="/images/products/{{ about.leftImg }}" alt="" class="about-img">
+            <img src="/images/products/{{ about.rightImg }}" alt="" class="about-img">
+        </div>
+        <div class="about">
+            <p class="manuscrit">{{ about.title }} </p>
+            {{ about.content|raw }}
+            
+        </div>
+    </section>
+
+    <section class="service-section">
+
+    {% for service in services %}
+        <div class="service">
+            <img src="/images/products/{{ service.icon }}" alt="">
+           <div>
+                <p class="title-service bold subtitle">{{ service.title }}</p>
+                <p>{{ service.description|raw }}</p>
+           </div>
+        </div>
+    {% endfor %}
+
+       
+    </section>
+
+    <section class="menu-section">
+        <div class="menu-header">
+            <p class="bold title">NOS MENUS</p>
+        </div>
+        <div class="menu-content">
+          
+            <div class="menu-block-carte">
+                <div class="menu-card">
+
+                    {% for menu in menus %}
+                        <div class="menu-line">
+                            <div class="menu-line-header">
+                                <div class="menu-line-title white bold subtitle">{{ menu.name }}</div>
+                                <div class="menu-line-price manuscrit bold">{{ menu.price }} €</div>
+                            </div>
+                            <div class="menu-line-desc grey">{{ menu.description }}</div>
+                            <hr>
+                        </div>
+                    {% endfor %}
+
+                    
+
+                </div>
+            </div>
+            <div class="menu-block-img">
+                <img src="/images/products/{{pictureMenu.picture}}" alt="">
+            </div>
+        </div>
+        
+    </section>
+{% endblock %}

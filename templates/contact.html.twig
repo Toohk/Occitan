@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<section class="front-section">
+       
+    
+        <p class="title-page bold">CONTACT</p>
+    </section>
+
+    <section class="contact-section">
+    <form action="">
+        <input required type="text" placeholder="Votre nom">
+        <input required type="text" placeholder="Votre email">
+        <textarea required placeholder="Votre message" name="" id="" cols="30" rows="10"></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+    </section>
+
+    <div id="mapid"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+	crossorigin=""></script>
+	
+	<script>
+		var mymap = L.map('mapid').setView([44.75788346507706, 1.3498670365007461], 12);
+		L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			id: 'mapbox/streets-v11',
+			tileSize: 512,
+			zoomOffset: -1,
+			accessToken: 'your.mapbox.access.token'
+		}).addTo(mymap);
+		L.marker([44.75788346507706, 1.3498670365007461]).addTo(mymap);
+	</script>
+{% endblock %}
