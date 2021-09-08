@@ -53,7 +53,7 @@
                                 <div class="menu-line-title white bold subtitle">{{ menu.name }}</div>
                                 <div class="menu-line-price manuscrit bold">{{ menu.price }} €</div>
                             </div>
-                            <div class="menu-line-desc grey">{{ menu.description }}</div>
+                            <div class="menu-line-desc grey">{{ menu.description|raw }}</div>
                             <hr>
                         </div>
                     {% endfor %}
