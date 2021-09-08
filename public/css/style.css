@@ -36,6 +36,10 @@ nav ul{
 }
 nav li{
     cursor: pointer;
+    margin-right: 25px;
+}
+nav li:last-of-type{
+    margin-right: 0px;
 }
 nav li:hover{
     color:rgb(228, 190, 108) ;
@@ -43,7 +47,6 @@ nav li:hover{
 nav li a{
     color: white;
     text-decoration: none;
-    margin-right: 25px;
 }
 nav li a:hover{
     color:rgb(228, 190, 108) ;
