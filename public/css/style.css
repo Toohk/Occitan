@@ -391,6 +391,10 @@ footer{
     padding-top: 5px;
 }
 
+.menu-line ul{
+    margin: 0px;
+}
+
 @media (max-width: 850px) { 
     .block-num,
     header nav{
