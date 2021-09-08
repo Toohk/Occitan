@@ -31,7 +31,7 @@ header{
 nav ul{
     display: flex;
     list-style: none;
-    gap: 30px;
+
     margin-top: 12px;
 }
 nav li{
@@ -43,6 +43,7 @@ nav li:hover{
 nav li a{
     color: white;
     text-decoration: none;
+    margin-right: 25px;
 }
 nav li a:hover{
     color:rgb(228, 190, 108) ;
@@ -89,7 +90,6 @@ nav li a:hover{
 }
 .about-img-block{
     display: flex;
-    gap: 30px;
     margin: 0px auto;
     width: 50%;
     justify-content: center;
@@ -104,6 +104,9 @@ nav li a:hover{
     width: 200px;
     display: block;
     box-shadow: #b8313e -10px -10px 0px;
+}
+.first-img{
+    margin-right: 30px;
 }
 
 /** SERVICE SECTION **/
@@ -141,7 +144,7 @@ nav li a:hover{
 .menu-content{
     display: flex;
     padding: 0px 40px 40px 40px;
-    gap: 20px;
+
 }
 .menu-block-carte{
     width: 50%;
@@ -151,7 +154,7 @@ nav li a:hover{
     text-align: center;
 }
 .menu-card{
-  
+  margin-right: 20px;
     background-color: rgb(42, 51, 61);
 }
 .menu-block-img{
@@ -411,6 +414,11 @@ footer{
     .menu-content{
         flex-wrap: wrap;
         justify-content: center;
+        
+    }
+    .menu-card{
+        margin-right: 0px;
+        margin-bottom: 20px;
     }
     .about{
         width: 100%;
@@ -452,8 +460,8 @@ footer{
         width: auto;
     }
     .carte-item img{
-        width: auto;
-        height: auto;
+        width: 100%;
+        height:auto;
         margin-right: 0px;
     }
     .carte-item-header{
@@ -468,3 +476,4 @@ footer{
     }
     
 }
+
