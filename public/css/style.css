@@ -150,7 +150,8 @@ nav li a:hover{
 
 }
 .menu-block-carte{
-    width: 50%;
+    width: auto;
+    margin: 0px 50px;
 }
 .menu-header{
     margin-top: 60px;
@@ -169,7 +170,7 @@ nav li a:hover{
     object-fit: cover;
 }
 .menu-card{
-    padding: 50px;
+    padding: 90px;
 }
 .menu-line{
     margin-bottom: 50px;
@@ -422,6 +423,7 @@ footer{
     .menu-card{
         margin-right: 0px;
         margin-bottom: 20px;
+        padding: 40px;
     }
     .about{
         width: 100%;
@@ -438,6 +440,7 @@ footer{
     }
     .menu-block-carte{
         width: 100%;
+        margin: 0px;
     }
     .menu-block-img{
         width: 100%;
