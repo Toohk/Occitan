@@ -163,6 +163,7 @@ nav li a:hover{
 }
 .menu-block-img{
     width: 50%;
+    display: none;
 }
 .menu-section img{
     width: 100%;
