@@ -43,6 +43,11 @@ class Dishe
     private $picture;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pictureDesc;
+
+    /**
      * @Vich\UploadableField(mapping="products", fileNameProperty="picture")
      * @var File|null
      */
@@ -127,5 +132,17 @@ class Dishe
     public function getPictureFile()
     {
         return $this->pictureFile;
+    }
+
+    public function getPictureDesc(): ?string
+    {
+        return $this->pictureDesc;
+    }
+
+    public function setPictureDesc(string $pictureDesc): self
+    {
+        $this->pictureDesc = $pictureDesc;
+
+        return $this;
     }
 }

@@ -26,6 +26,7 @@ class EventCrudController extends AbstractCrudController
             TextField::new('date'),
             Field::new('pictureFile', 'Image')->setFormType(VichImageType::class)->setTranslationParameters(['form.label.delete'=>'Delete'])->onlyOnForms(),
             ImageField::new('picture')->setBasePath('images/products')->onlyOnIndex(),
+            TextField::new('pictureDesc', 'Description image'),
         ];
     }
 

@@ -32,6 +32,11 @@ class PictureMenu
      */
     private $pictureFile;
 
+     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pictureDesc;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -58,5 +63,18 @@ class PictureMenu
     public function getPictureFile()
     {
         return $this->pictureFile;
+    }
+
+
+    public function getPictureDesc(): ?string
+    {
+        return $this->pictureDesc;
+    }
+
+    public function setPictureDesc(string $pictureDesc): self
+    {
+        $this->pictureDesc = $pictureDesc;
+
+        return $this;
     }
 }
