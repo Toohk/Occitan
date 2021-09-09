@@ -33,9 +33,10 @@ class AboutCrudController extends AbstractCrudController
             TextEditorField::new('content', 'Contenu'),
             Field::new('leftImgFile', 'Image 1, 200x400px')->setFormType(VichImageType::class)->setTranslationParameters(['form.label.delete'=>'Delete'])->onlyOnForms(),
             ImageField::new('leftImg')->setBasePath('images/products')->onlyOnIndex(),
+            TextField::new('leftImgDesc', 'Description image'),
             Field::new('rightImgFile', 'Image 2, 200x400px')->setFormType(VichImageType::class)->setTranslationParameters(['form.label.delete'=>'Delete'])->onlyOnForms(),
             ImageField::new('rightImg')->setBasePath('images/products')->onlyOnIndex(),
-   
+            TextField::new('rightImgDesc', 'Description image'),
         ];
 
     
@@ -45,11 +46,11 @@ class AboutCrudController extends AbstractCrudController
     }
 
     public function configureActions(Actions $actions): Actions
-{
-    return $actions
-        ->remove(Crud::PAGE_INDEX, Action::NEW)
-        ->remove(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN)
-    ;
-}
+    {
+        return $actions
+            ->remove(Crud::PAGE_INDEX, Action::NEW)
+            ->remove(Crud::PAGE_EDIT, Action::SAVE_AND_RETURN)
+        ;
+    }
 
 }

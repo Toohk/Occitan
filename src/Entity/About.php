@@ -42,6 +42,11 @@ class About
      */
     private $leftImgFile;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $leftImgDesc;
+
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -53,6 +58,11 @@ class About
      * @var File|null
      */
     private $rightImgFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $rightImgDesc;
 
     public function getId(): ?int
     {
@@ -129,5 +139,29 @@ class About
     public function getRightImgFile()
     {
         return $this->rightImgFile;
+    }
+
+    public function getLeftImgDesc(): ?string
+    {
+        return $this->leftImgDesc;
+    }
+
+    public function setLeftImgDesc(?string $leftImgDesc): self
+    {
+        $this->leftImgDesc = $leftImgDesc;
+
+        return $this;
+    }
+
+    public function getRightImgDesc(): ?string
+    {
+        return $this->rightImgDesc;
+    }
+
+    public function setRightImgDesc(?string $rightImgDesc): self
+    {
+        $this->rightImgDesc = $rightImgDesc;
+
+        return $this;
     }
 }
