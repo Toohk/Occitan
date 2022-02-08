@@ -13,6 +13,7 @@
     <section class="event-section">
         <div class="carte-content">
 
+
             {% for event in events %}
                 <div class="carte-item">
                     <img src="/images/products/{{event.picture}}" alt="{{event.pictureDesc}}">
@@ -22,6 +23,43 @@
                             <div class="carte-item-price">{{event.date}}</div>
                         </div>
                         <div class="carte-item-desc dark-grey">{{event.description|raw}}</div>
+                        {% if event.menu %}
+                        <div class="show-menu-bloc"><button id="myBtn{{event.id}}" class="btn-show-menu">Voir le Menu</button></div>
+
+                            <div id="myModal{{event.id}}" class="modal">
+
+                            <div class="modal-content">
+                            <div class="modal-close">
+                                <span id="close{{event.id}}" class="close">&times;</span>
+                            </div>
+                                <img src="/images/products/{{event.menu}}" >
+                            </div>
+
+                            </div>
+                            <script>
+                                var modal{{event.id}} = document.getElementById('myModal{{event.id}}');
+
+                                var btn{{event.id}} = document.getElementById("myBtn{{event.id}}");
+
+                                var span{{event.id}} = document.getElementById("close{{event.id}}");
+
+                                btn{{event.id}}.onclick = function() {
+                                modal{{event.id}}.style.display = "block";
+                                }
+
+                                span{{event.id}}.onclick = function() {
+                                modal{{event.id}}.style.display = "none";
+                                }
+
+                                window.onclick = function(event) {
+                                if (event.target == modal{{event.id}}) {
+                                    modal{{event.id}}.style.display = "none";
+                                }
+                                }
+                            </script>
+                        {% endif %}
+                        
+                    
                     </div>
                 </div>
             {% endfor %}
@@ -30,4 +68,5 @@
         </div>
 
     </section>
+    
 {% endblock %}

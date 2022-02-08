@@ -44,6 +44,11 @@ class Event
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
+    private $menu;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
     private $pictureDesc;
 
     /**
@@ -51,6 +56,12 @@ class Event
      * @var File|null
      */
     private $pictureFile;
+
+    /**
+     * @Vich\UploadableField(mapping="products", fileNameProperty="menu")
+     * @var File|null
+     */
+    private $menuFile;
 
     public function getId(): ?int
     {
@@ -126,5 +137,28 @@ class Event
         $this->pictureDesc = $pictureDesc;
 
         return $this;
+    }
+
+    public function getMenu(): ?string
+    {
+        return $this->menu;
+    }
+
+    public function setMenu(?string $menu): self
+    {
+        $this->menu = $menu;
+
+        return $this;
+    }
+
+    public function setMenuFile(?File $image = null) 
+    {
+        $this->menuFile = $image;
+        return $this;
+    }
+
+    public function getMenuFile()
+    {
+        return $this->menuFile;
     }
 }

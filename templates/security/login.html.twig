@@ -1,6 +1,14 @@
 
 
-{% block title %}Log in!{% endblock %}
+
+ {% block metadata %}
+           <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% endblock metadata %}
+{% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+            <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+        {% endblock %}
 
 {% block body %}
 <form method="post">
@@ -14,29 +22,35 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputUsername">Username</label>
-    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    
+    
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
     >
-
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
+    <div class="section-login">
+    <div class="bloc-login">
+        <div class="header-login"><img class="header-logo" src="/images/logo.svg" alt=""></div>
+        <div class="bloc-login-content">
+            <div class="input-bloc">
+                <label class="login-label" for="inputUsername">Utilisateur</label>
+                <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+            </div>
+            <div class="input-bloc"> 
+                <label class="login-label" for="inputPassword">Mot de passe</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+            </div>
+            <div class="input-bloc-btn">
+                <button class="btn btn-lg btn-primary" type="submit">
+                    Se connecter
+                </button>
+            </div>
         </div>
-    #}
+    
+    </div>
+    </div>
+  
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
+    
 </form>
 {% endblock %}

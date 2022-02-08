@@ -36,7 +36,11 @@
 
                     {% for dishe in category.dishes %}
                         <div class="carte-item">
+                        {% if dishe.picture %} 
                             <img src="/images/products/{{dishe.picture}}" alt="{{dishe.pictureDesc}}">
+                        {% else %}
+                            <div class="img-placeholder"> </div>
+                        {% endif %}
                             <div class="carte-item-content">
                                 <div class="carte-item-header bold">
                                     <div class="carte-item-title subtitle">{{dishe.name}}</div>
